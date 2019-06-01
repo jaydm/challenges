@@ -2,6 +2,7 @@
 # Code Challenge 02 - Word Values Part II - a simple game
 # http://pybit.es/codechallenge02.html
 
+import itertools
 import random
 from data import DICTIONARY, LETTER_SCORES, POUCH
 
@@ -47,6 +48,9 @@ def get_possible_dict_words(selection):
             possible.append(word)
 
     return possible
+
+def _get_permutations_draw(draw):
+    return itertools.permutations(draw) 
 
 def _validation(test, letters):
     for word in get_possible_dict_words(letters):
